@@ -69,7 +69,7 @@ if (!firebase.apps.length) {
 firebase.initializeApp(config);
 
 
-function AuthStack() {
+function AuthStack() { //this is the stack for the login and signup screens
   return (
     <Stack.Navigator
       screenOptions={{
