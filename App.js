@@ -4,6 +4,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+//Fix fire base import
+
 import * as firebase from 'firebase';
 import '@firebase/auth';
 import '@firebase/firestore';
