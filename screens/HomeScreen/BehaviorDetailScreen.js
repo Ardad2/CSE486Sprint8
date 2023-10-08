@@ -53,6 +53,7 @@ function BehaviorDetailScreen( {route, navigation} )
         <View> 
         <Text>{behaviorList[behaviorIndex].name}</Text>
         <Text>{behaviorList[behaviorIndex].date}</Text>
+        <Text>Behavior Progress</Text>
 
         <View style={styles.buttonContainer}>
              <View style={styles.button} >

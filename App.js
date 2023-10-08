@@ -5,7 +5,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
+
 //importing firebase to use as the database
+
+//Fix fire base import
+
 import * as firebase from 'firebase';
 import '@firebase/auth';
 import '@firebase/firestore';

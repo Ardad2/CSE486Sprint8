@@ -6,7 +6,7 @@ import { useSelector, dispatch , useDispatch} from 'react-redux';
 import { authenticateAuthTokens, logoutAuthTokens } from '../store/redux/authTokens';
 
 
-export default function Settings() {
+export default function Report() {
 
   const authToken = useSelector( (state) => state.authTokens.data[0]); 
 
