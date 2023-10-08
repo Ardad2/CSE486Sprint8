@@ -76,7 +76,7 @@ export default function BehaviorFormScreen( {route, navigation} )
            }
          ));*/
 
-
+           //retrieving the users information to display their behaviors
          dispatch(addUserBehavior(
           {
             username: authToken.email,
@@ -151,6 +151,8 @@ export default function BehaviorFormScreen( {route, navigation} )
     )
 };
 
+//the css for the homescreen
+//with the formatting/styling
 const styles = StyleSheet.create({
     inputContainer: {
       flex: 1,
