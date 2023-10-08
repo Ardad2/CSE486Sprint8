@@ -16,7 +16,9 @@ export default function Settings() {
     dispatch(logoutAuthTokens());
  }
 
-
+//settings screen page
+//needs to be able to turn on vacation mode which will result
+// in no notifications until return of vacation
   return (
     <View style={styles.container}>
       <Text></Text>
