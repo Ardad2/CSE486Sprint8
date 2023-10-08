@@ -6,6 +6,8 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { applyLocale, displayTitleByLocale } from './Locale';
 import styles from './Style';
 
+
+//creating the weekly calendar
 const WeeklyCalendar = props => {
     const [currDate, setCurrDate] = useState(moment(props.selected).locale(props.locale))
     const [weekdays, setWeekdays] = useState([])
@@ -384,5 +386,5 @@ WeeklyCalendar.defaultProps = { // All props are optional
     titleStyle: {},
     dayLabelStyle: {},
 };
-
+//displaying weekly calendar
 export default WeeklyCalendar;
