@@ -4,6 +4,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+
+//importing firebase to use as the database
 import * as firebase from 'firebase';
 import '@firebase/auth';
 import '@firebase/firestore';
@@ -36,6 +38,8 @@ import { store } from './store/redux/store';
 const Stack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator();
 
+
+//key & password for the database
 const firebaseConfig = {
 
   apiKey: "AIzaSyAUuZUgvlmMYBOl_Kg43Eb2sHnEJp4_us4",
@@ -52,6 +56,7 @@ const firebaseConfig = {
 
 };
 
+//initializing the datavase
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
