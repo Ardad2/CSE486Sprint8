@@ -34,6 +34,8 @@ export default function Settings() {
   );
 }
 
+//save button to save settings upon leaving the page
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
