@@ -4,7 +4,6 @@
 import {useState, useEffect} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useSelector, dispatch, useDispatch } from 'react-redux';
-
 import { 
   StyleSheet,  
   View, 
@@ -45,8 +44,9 @@ function ProfileScreen( {route, navigation} ) // function where the profile scre
 
 
     const name = route.params.name;
-
-    function decrementGoalCount() // tracks goals being completed or removed
+  
+    // tracks goals being completed or removed
+    function decrementGoalCount()
       {
         dispatch(decrementBehavior(
             {
@@ -56,7 +56,8 @@ function ProfileScreen( {route, navigation} ) // function where the profile scre
           ));
      }
 
-     function incrementGoalCount() // tracks goals being added
+    // tracks goals being added
+     function incrementGoalCount()
      {
         dispatch(incrementBehavior(
             {
@@ -66,7 +67,8 @@ function ProfileScreen( {route, navigation} ) // function where the profile scre
           ));
     }
 
-    return ( // print html
+    // print html
+    return (
         <View> 
         <Text>{behaviorList[behaviorIndex].name}</Text>
         <Text>{behaviorList[behaviorIndex].date}</Text>
@@ -83,7 +85,8 @@ function ProfileScreen( {route, navigation} ) // function where the profile scre
     )
 }
 
-const styles = StyleSheet.create({ // styling for ui the use will see
+// styling for ui the use will see
+const styles = StyleSheet.create({
     inputContainer:
       {
       flex: 1,
