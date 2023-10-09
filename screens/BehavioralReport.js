@@ -5,9 +5,8 @@ import { useState } from 'react';
 import { useSelector, dispatch , useDispatch} from 'react-redux';
 import { authenticateAuthTokens, logoutAuthTokens } from '../store/redux/authTokens';
 
-
-export default function Report() { //Note: this is a function that is passed in as a prop from App.js
-
+// NOTE this is a function that is passed in as a prop from App.js
+export default function Report() { 
     const authToken = useSelector( (state) => state.authTokens.data[0]);
 
     const dispatch = useDispatch();
@@ -37,7 +36,8 @@ export default function Report() { //Note: this is a function that is passed in 
         dispatch(logoutAuthTokens());
     }
 
-    return ( //Note: this is a function that is passed in as a prop from App.js
+    // NOTE: this is a function that is passed in as a prop from App.js
+    return ( 
         <View style={styles.container}>
             <Text></Text>
             <View style={styles.buttonContainer}>
