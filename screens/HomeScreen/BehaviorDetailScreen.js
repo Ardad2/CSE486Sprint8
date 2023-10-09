@@ -13,7 +13,7 @@ function BehaviorDetailScreen( {route, navigation} )
 
     //Message to be displayed
 
-    renderSwitch(param) {
+    renderSwitch(param) ;{
   switch(param) {
     case 'a':
       return 'Very good';

@@ -1,4 +1,5 @@
-import { StyleSheet, View, Text, Pressable } from 'react-native';
+// Pressable wrapper component used as opposed to touchable component; is more extensive than touch-based components
+import { StyleSheet, View, Text, Pressable } from 'react-native'; 
 import { useNavigation } from '@react-navigation/native';
 
 

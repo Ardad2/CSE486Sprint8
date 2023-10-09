@@ -24,7 +24,8 @@ const WeeklyCalendar = props => {
     const [dayViewOffsets, setDayViewOffsets] = useState(undefined)
     const scrollViewRef = useRef()
     
-    useEffect(() => { // only first mount
+    // only first mount
+    useEffect(() => { 
         //applyLocale(props.locale, cancelText => setCancelText(cancelText), confirmText => setConfirmText(confirmText))
         setCancelText('Cancel');
         setConfirmText('Confirm');
