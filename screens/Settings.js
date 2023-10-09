@@ -13,29 +13,39 @@ export default function Settings()
 
   const dispatch = useDispatch();
 
-  function logout()
-    {
-      dispatch(logoutAuthTokens());
-    }
+  var vacationMode = false;
 
-// settings screen page
-// needs to be able to turn on vacation mode which will result
+  function logout() {
+    dispatch(logoutAuthTokens());
+ }
+
+//settings screen page
+//needs to be able to turn on vacation mode which will result
 // in no notifications until return of vacation
-  return (
-    <View style={styles.container}>
-      <Text></Text>
-      <View style={styles.buttonContainer}>
-             <View style={styles.button} >
-             <Button title="My Profile" onPress={logout} color="black"/>
-             <Button title="Vacation Mode?" onPress={logout} color="black"/>
-                <Button title="Log Out" onPress={logout} color="black"/>
-              <Button 
-                title ="Save Settings"
-                onPress={() => Alert.alert("Save button pressed")} />
-            </View>
-            </View>
-    </View>
-  );
+return ( //returning information for settings page
+<View style={styles.container}>
+  <Text></Text>
+  <View style={styles.buttonContainer}>
+         <View style={styles.button} >
+         <Button title="My Profile" onPress={logout} color="black"/>
+         <Button title="Vacation Mode?" onPress={vacationMode} color="black"/>
+            <Button title="Log Out" onPress={logout} color="black"/>
+            <Button 
+            title ="Save Settings"
+            onPress={() => Alert.alert("Save button pressed")} />
+        </View>
+        </View>
+</View>
+);
+}
+
+if(vacationMode)
+{
+  //notifications = off
+}
+else
+{
+  //notifications = on
 }
 
 //save button to save settings upon leaving the page
