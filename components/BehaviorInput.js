@@ -1,20 +1,26 @@
-import { useState } from 'react'; //Note: useState is a React Hook
-import { StyleSheet, View, TextInput, Button, Modal, Image } from 'react-native'; //Note: Modal is a component that is built into React Native
+// NOTE: useState is a React Hook
+import { useState } from 'react'; 
+// NOTE: Modal is a component that is built into React Native
+import { StyleSheet, View, TextInput, Button, Modal, Image } from 'react-native'; 
 
-function BehaviorInput(props) { //Note: this is a function that is passed in as a prop from App.js
+// NOTE: this is a function that is passed in as a prop from App.js
+function BehaviorInput(props) { 
 
     const [enteredBehaviorText, setEnteredBehaviorText] = useState('');
 
-    function behaviorInputHandler(enteredText) { //Note: this is a function that is passed in as a prop from App.js
+    // NOTE: this is a function that is passed in as a prop from App.js
+    function behaviorInputHandler(enteredText) { 
         setEnteredBehaviorText(enteredText);
     };
 
-    function addBehaviorHandler() { //Note: this is a function that is passed in as a prop from App.js
+    // NOTE: this is a function that is passed in as a prop from App.js
+    function addBehaviorHandler() { 
         props.onAddBehavior(enteredBehaviorText);
         setEnteredBehaviorText('');
     }
 
-    return ( //Note: this is a function that is passed in as a prop from App.js
+    // NOTE: this is a function that is passed in as a prop from App.js
+    return ( 
         <Modal visible={props.visible} animationType="slide">
             <View style ={styles.inputContainer}>
                 <Image style={styles.image} source={require('../assets/goal.png')}/>
@@ -22,7 +28,7 @@ function BehaviorInput(props) { //Note: this is a function that is passed in as 
                     style={styles.textInput}
                     placeholder="What did you do today?" 
 
-                    //Note if it was goalInputHandler() it would get executed as soon as React starts.
+                    // NOTE: if it was goalInputHandler() it would get executed as soon as React starts.
 
                     onChangeText={behaviorInputHandler}
                     value={enteredBehaviorText}
@@ -43,6 +49,7 @@ function BehaviorInput(props) { //Note: this is a function that is passed in as 
 
 export default BehaviorInput;
 
+// Styling and structuring of the behavioral components in the application page
 const styles = StyleSheet.create({
     inputContainer: {
         flex: 1,
