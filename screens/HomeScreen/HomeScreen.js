@@ -1,83 +1,72 @@
 import {useState, useEffect} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import { useSelector, dispatch, useDispatch } from 'react-redux';
-
 import { 
   StyleSheet,  
   View, 
   FlatList, Button, Text
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-
 import BehaviorItem from '../../components/BehaviorItem';
 import BehaviorInput from '../../components/BehaviorInput';
 import IconButton from '../../components/IconButton';
-
 import BehaviorDetailScreen from './BehaviorDetailScreen';
 import BehaviorFormScreen from './BehaviorFormScreen';
-
 import { authenticateAuthTokens, logoutAuthTokens } from '../../store/redux/authTokens';
-
 
 const HomeStack = createStackNavigator();
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen( {navigation} ) {
 
-//  const behaviorList = useSelector((state) => state.behaviors.behaviors);
+//  const behaviorList = useSelector( ( state) => state.behaviors.behaviors );
 const dispatch = useDispatch();
 
-const authToken = useSelector( (state) => state.authTokens.data[0]); 
+const authToken = useSelector( ( state) => state.authTokens.data[0] ); 
 
-//const behaviorList = useSelector( (state) => state.users.users[0].behaviors);
+//const behaviorList = useSelector( ( state) => state.users.users[0].behaviors );
 
-const userList = useSelector( (state) => state.users.users);
-const currUser = userList.filter(user => user.username == authToken.email);
+const userList = useSelector( ( state) => state.users.users );
+const currUser = userList.filter( user => user.username == authToken.email );
 const behaviorList = currUser[0].behaviors;
 
 
-  const [ date, setDate ] = useState(null);
+  const [ date, setDate ] = useState( null);
 
   useEffect( () => {
     let today = new Date();
-    let date = today.getDate()+'.'+(today.getMonth()+1)+'.'+today.getFullYear();
-    setDate(date);
-  }, []);
+    let date = today.getDate()+'.'+( today.getMonth()+1)+'.'+today.getFullYear();
+    setDate( date);
+  }, [] );
 
-
-
-  const [modalIsVisible, setModalIsVisible] = useState(false);
+  const [modalIsVisible, setModalIsVisible] = useState( false );
   const [courseBehaviors, setCourseBehaviors] = useState([]);
 
   function startAddBehaviorHandler() {
-   //setModalIsVisible(true);
-   navigation.navigate("BehaviorListScreen")
+   //setModalIsVisible( true );
+   navigation.navigate( "BehaviorListScreen" )
 
-  // navigation.navigate("BehaviorFormScreen", { onAddBehavior: addBehaviorHandler} )
+  // navigation.navigate( "BehaviorFormScreen", { onAddBehavior: addBehaviorHandler} )
 
   }
 
   function endAddBehaviorHandler() {
-   // setModalIsVisible(false);
+   // setModalIsVisible( false );
    
   }
   
-  function addBehaviorHandler(enteredBehaviorText) {
-    setCourseBehaviors(currentCourseBehaviors => [...currentCourseBehaviors, {text: enteredBehaviorText, id: Math.random().toString(), date: date, icon: "Hello"}       ]);
+  function addBehaviorHandler( enteredBehaviorText ) {
+    setCourseBehaviors( currentCourseBehaviors => [...currentCourseBehaviors, {text: enteredBehaviorText, id: Math.random().toString(), date: date, icon: "Hello"}       ] );
   endAddBehaviorHandler();
   }
 
   function deleteBehaviorHandler(id) {
-    setCourseBehaviors( (currentCourseBehaviors) => {
-      return currentCourseBehaviors.filter((behavior) => behavior.id != id);
+    setCourseBehaviors( (  ) => {
+      return currentCourseBehaviors.filter( ( behavior ) => behavior.id != id );
     } );
   }
 
-  
-
-
-  function pressHandler(name) {
-    navigation.navigate("BehaviorDetailScreen", { name: name});
+  function pressHandler( name ) {
+    navigation.navigate( "BehaviorDetailScreen", { name: name} );
   }
 
   return (
@@ -109,7 +98,6 @@ const behaviorList = currUser[0].behaviors;
           memo={itemData.item.memo}
           date={itemData.item.date}
           type={itemData.item.type}
-
 
           onDeleteItem={deleteBehaviorHandler}
           onPress={pressHandler}
