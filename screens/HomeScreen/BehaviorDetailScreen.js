@@ -9,6 +9,19 @@ function BehaviorDetailScreen( {route, navigation} )
 
     //Logic for the statistics
 
+
+    //Message to be displayed
+
+    renderSwitch(param) {
+  switch(param) {
+    case 'a':
+      return 'Very good';
+    default:
+      return 'Bad';
+  }
+}
+
+
     const dispatch = useDispatch();
 
     const authToken = useSelector( (state) => state.authTokens.data[0]); 
