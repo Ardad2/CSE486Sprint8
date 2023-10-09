@@ -6,18 +6,20 @@ import { useSelector, dispatch , useDispatch} from 'react-redux';
 import { authenticateAuthTokens, logoutAuthTokens } from '../store/redux/authTokens';
 
 
-export default function Settings() {
+export default function Settings()
+  {
 
-  const authToken = useSelector( (state) => state.authTokens.data[0]); 
+  const authToken = useSelector( (state) => state.authTokens.data[0] ); 
 
   const dispatch = useDispatch();
 
-  function logout() {
-    dispatch(logoutAuthTokens());
- }
+  function logout()
+    {
+      dispatch(logoutAuthTokens());
+    }
 
-//settings screen page
-//needs to be able to turn on vacation mode which will result
+// settings screen page
+// needs to be able to turn on vacation mode which will result
 // in no notifications until return of vacation
   return (
     <View style={styles.container}>
@@ -32,26 +34,27 @@ export default function Settings() {
                 onPress={() => Alert.alert("Save button pressed")} />
             </View>
             </View>
-
     </View>
   );
 }
 
 //save button to save settings upon leaving the page
-
 const styles = StyleSheet.create({
-  container: {
+  container:
+    {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  buttonContainer: {
+  buttonContainer:
+    {
     marginTop: 16,
     backgroundColor: '#F0F0F0',
-    flexDirection: "row",
+    flexDirection: "row", 
 },
-button: {
+button:
+  {
     width: 100,
     marginHorizontal: 8
 }
