@@ -88,34 +88,34 @@ function ProfileScreen( {route, navigation} ) // function where the profile scre
 // styling for ui the use will see
 const styles = StyleSheet.create({
     inputContainer:
-      {
+    {
       flex: 1,
       padding: 16,
       backgroundColor: 'white'
     },
     textInput:
-      {
-      borderWidth: 1,
-      borderColor: '#F0F0F0',
-      backgroundColor: '#F0F0F0',
+    {
       color: '#120438',
       borderRadius: 6,
       width: '100%',
       padding: 8
+      borderWidth: 1,
+      borderColor: '#F0F0F0',
+      backgroundColor: '#F0F0F0'
     },
     buttonContainer:
-      {
+    {
         marginTop: 16, 
         backgroundColor: '#FFFFFF', 
         flexDirection: "row", 
     },
     button:
-      {
+    {
         width: 100, 
         marginHorizontal: 8 
     },
     textStyle:
-      {
+    {
       fontWeight: 'bold', 
       padding: 10 
     }
