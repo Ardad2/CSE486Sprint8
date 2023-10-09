@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const usersSlice = createSlice({
+const usersSlice = createSlice( {
     name: 'users',
     initialState: {
         users: [ {
@@ -14,68 +14,63 @@ const usersSlice = createSlice({
     },
 
     reducers: {
-        addUser: (state, action) => {
+        addUser: ( state, action ) => {
 
             var exists = false;
 
-            for (var i = 0; i < state.users.length; i++)
+            for ( var i = 0; i < state.users.length; i++ )
             {
-                if (state.users[i].username == (action.payload.username))
+                if ( state.users[i].username == ( action.payload.username ) )
                 {
                     exists = true;
                 }
             }
 
-            if (exists == false)
+            if ( exists == false )
             {
 
 
                 var newId = 0;
 
-                if (state.users.length > 0)
+                if ( state.users.length > 0 )
                 {
-
-                for (var i = 0; i < state.users.length; i++)
-                {
-                    newId = state.users[i].id;
-                }
-
-                newId = newId + 1;
+                    for ( var i = 0; i < state.users.length; i++ )
+                    {
+                        newId = state.users[i].id;
+                    }
+    
+                    newId = newId + 1;
             }
 
 
-
-            state.users.push({
+            state.users.push( {
                 id: newId,
                 username: action.payload.username,
                 behaviors: [
                 ]
-            });
-        
-
+            } );
 
             }
 
+        },
+        removeUser: ( state, action ) => {
+            state.users.splice( state.users.indexOf( action.payload.id ), 1 );
 
         },
-        removeUser: (state, action) => {
-            state.users.splice(state.users.indexOf(action.payload.id), 1);
 
-        },
-
-        addBehavior: (state, action) => {
+        addBehavior: ( state, action ) => {
 
             var index = 0;
 
-            for (var i = 0; i < state.users.length ; i++)
+            for ( var i = 0; i < state.users.length ; i++ )
             {                
-                if (state.users[i].username == (action.payload.username)) {
+                if ( state.users[i].username == ( action.payload.username ) ) 
+                {
                     index = i;
                 }
             }
 
-
-            state.users[index].behaviors.push({
+            state.users[index].behaviors.push( {
                 id: action.payload.id,
                 name: action.payload.name,
                 icon: action.payload.icon,
@@ -84,25 +79,27 @@ const usersSlice = createSlice({
                 memo: action.payload.memo,
                 date: action.payload.date,
                 type: action.payload.type,
-            });
+            } );
         },
         
-        incrementBehavior: (state, action) => {
+        incrementBehavior: ( state, action ) => {
             
 
             var index = 0;
             var behaviorIndex = 0;
 
-            for (var i = 0; i < state.users.length ; i++)
+            for ( var i = 0; i < state.users.length ; i++ )
             {                
-                if (state.users[i].username == (action.payload.username)) {
+                if ( state.users[i].username == ( action.payload.username ) )
+                {
                     index = i;
                 }
             }
 
-            for (var i = 0; i < state.users[index].behaviors.length ; i++)
+            for ( var i = 0; i < state.users[index].behaviors.length ; i++ )
             {                
-                if (state.users[index].behaviors.name == (action.payload.behaviorName)) {
+                if ( state.users[index].behaviors.name == ( action.payload.behaviorName ) )
+                {
                     behaviorIndex = i;
                 }
             }
@@ -114,36 +111,38 @@ const usersSlice = createSlice({
 
         },
 
-        decrementBehavior: (state, action) => {
+        decrementBehavior: ( state, action ) => {
             
 
             var index = 0;
             var behaviorIndex = 0;
 
-            for (var i = 0; i < state.users.length ; i++)
+            for ( var i = 0; i < state.users.length ; i++ )
             {                
-                if (state.users[i].username == (action.payload.username)) {
+                if ( state.users[i].username == ( action.payload.username ) )
+                {
                     index = i;
                 }
             }
 
-            for (var i = 0; i < state.users[index].behaviors.length ; i++)
+            for ( var i = 0; i < state.users[index].behaviors.length ; i++ )
             {                
-                if (state.users[index].behaviors.name == (action.payload.behaviorName)) {
+                if ( state.users[index].behaviors.name == ( action.payload.behaviorName ) )
+                {
                     behaviorIndex = i;
                 }
             }
 
 
-            if (state.users[index].behaviors[behaviorIndex].count > 0)
+            if ( state.users[index].behaviors[behaviorIndex].count > 0 )
             {
-            state.users[index].behaviors[behaviorIndex].count--;
+                state.users[index].behaviors[behaviorIndex].count--;
             }
 
 
         },
     }
-});
+} );
 
 export const addUser = usersSlice.actions.addUser;
 export const removeUser = usersSlice.actions.removeUser;
