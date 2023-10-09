@@ -1,3 +1,4 @@
+// Firebase provides access to native code by wrapping the native SDKs into a JS API
 import * as firebase from 'firebase';
 
 const firebaseConfig = {
