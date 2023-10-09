@@ -1,4 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
+// StatusBar from expo-status-bar gives a component and imperative interface to control the app's status bar to change multiple features 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button} from 'react-native';
 import { useState } from 'react';
