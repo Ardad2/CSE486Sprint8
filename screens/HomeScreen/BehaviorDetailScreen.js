@@ -7,6 +7,8 @@ import { incrementBehavior, decrementBehavior } from '../../store/redux/users';
 function BehaviorDetailScreen( {route, navigation} )
 {
 
+    //Logic for the statistics
+
     const dispatch = useDispatch();
 
     const authToken = useSelector( (state) => state.authTokens.data[0]); 
