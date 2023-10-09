@@ -28,7 +28,7 @@ export default function Settings() {
              <Button title="Vacation Mode?" onPress={logout} color="black"/>
                 <Button title="Log Out" onPress={logout} color="black"/>
               <Button 
-                titlee ="Save Settings"
+                title ="Save Settings"
                 onPress={() => Alert.alert("Save button pressed")} />
             </View>
             </View>
