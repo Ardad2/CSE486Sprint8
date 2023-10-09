@@ -8,7 +8,7 @@ import { authenticateAuthTokens, logoutAuthTokens } from '../../store/redux/auth
 import { addUser } from '../../store/redux/users';
 
 
-
+// Authenticate user login information in the Login Screen
 function LoginScreen() {
 
 
@@ -39,10 +39,7 @@ function LoginScreen() {
         }
       ));
 
-
-
-
-
+    // If the user input the wrong credentials, notify them of their incorrect login information
     } catch (error) {
       console.log(error);
       Alert.alert(
@@ -53,6 +50,7 @@ function LoginScreen() {
     setIsAuthenticating(false);
   }
 
+  // If successfully authenticated, log the user in
   if (isAuthenticating) {
     return <LoadingOverlay message="Logging you in..." />;
   }
