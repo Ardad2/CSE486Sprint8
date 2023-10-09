@@ -7,5 +7,3 @@
 3. There is a settings page where the user can configure the application, such as whether to allow notifications, vacation mode etc. (DONE)
 4. There is a behavioral report page where the user can see their progress in their goal behaviors over a given period of time. (DONE)
 5. The user can add other users as friends and share their behavioral goals. (DONE)
-
-//this is a test

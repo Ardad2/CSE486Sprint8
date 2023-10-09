@@ -69,22 +69,22 @@ if (!firebase.apps.length) {
 firebase.initializeApp(config);
 
 
-function AuthStack() {
+function AuthStack() { //this is the stack for the login and signup screens
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: "F0F0F0" },
-        headerTintColor: 'black',
-        contentStyle: { backgroundColor: "#FAFAFA" },
-      }}
-    >
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="SignUp" component={SignupScreen} />
+                headerStyle: { backgroundColor: "F0F0F0" }, //Set Header color
+                headerTintColor: 'black', //Set Header text color
+                contentStyle: { backgroundColor: "#FAFAFA" }, //Set background color
+            }}
+        >
+            <Stack.Screen name="Login" component={LoginScreen} /> //this is the login screen
+            <Stack.Screen name="SignUp" component={SignupScreen} /> //this is the signup screen
     </Stack.Navigator>
   );
 }
 
-function AuthenticatedStack() {
+function AuthenticatedStack() { //this is the stack for the home screen
   return (
     <BottomTab.Navigator initialRouteName="Home" >
 
@@ -131,11 +131,11 @@ function AuthenticatedStack() {
   );
 }
 
-function Navigation() {
+function Navigation() { //this is the navigation function that determines which stack to use
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); //this is the dispatch function that is used to dispatch actions to the store
 
-  const authToken = useSelector( (state) => state.authTokens.data[0]); 
+  const authToken = useSelector( (state) => state.authTokens.data[0]); //this is the auth token that is used to determine if the user is logged in or not
 
 
   return (
