@@ -6,6 +6,7 @@ import { incrementBehavior, decrementBehavior } from '../../store/redux/users';
 
 function BehaviorDetailScreen( {route, navigation} )
 {
+    //Iterate through behavior logs
 
     //Logic for the statistics
 
